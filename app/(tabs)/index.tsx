@@ -18,7 +18,7 @@ const AudioFile: FC = () => {
     if (isPlaying) {
       await AudioPlayer.pause();
     } else {
-      await AudioPlayer.play(true);
+      await AudioPlayer.play(customProcessor);
     }
 
     setIsPlaying((prev) => !prev);

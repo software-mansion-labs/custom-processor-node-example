@@ -6,7 +6,7 @@ namespace audioapi {
 
 class MyProcessorNode : public AudioNode {
     public:
-      MyProcessorNode(BaseAudioContext *context);
+      explicit MyProcessorNode(BaseAudioContext *context);
       float getGain() const;
       void setGain(float value);
 

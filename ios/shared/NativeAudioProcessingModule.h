@@ -14,7 +14,6 @@ namespace facebook::react {
 class NativeAudioProcessingModule : public NativeAudioProcessingModuleCxxSpec<NativeAudioProcessingModule>  {
 public:
   NativeAudioProcessingModule(std::shared_ptr<CallInvoker> jsInvoker);
-  // jsi::Object createCustomProcessor(jsi::Runtime &runtime, jsi::Value audioContextJSIValue);
   void injectCustomProcessorInstaller(jsi::Runtime &runtime);
 
 private:

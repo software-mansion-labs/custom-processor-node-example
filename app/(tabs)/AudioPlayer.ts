@@ -1,15 +1,15 @@
-import { AudioContext, AudioManager } from 'react-native-audio-api';
+import { AudioManager, AudioContext, BaseAudioContext } from 'react-native-audio-api';
 import type {
   AudioBufferSourceNode,
-  AudioBuffer,
-  AudioNode
+  AudioBuffer
 } from 'react-native-audio-api';
+import { MyProcessorNode } from './types';
 
 class AudioPlayer {
   private readonly audioContext: AudioContext;
   private sourceNode: AudioBufferSourceNode | null = null;
   private audioBuffer: AudioBuffer | null = null;
-  private processorNode: AudioNode | null = null;
+  private processorNode: MyProcessorNode | null = null;
 
   private isPlaying: boolean = false;
 
@@ -48,7 +48,7 @@ class AudioPlayer {
     this.sourceNode.playbackRate.value = this.playbackRate;
     if (withProcessor) {
       console.log('Creating custom processor node');
-      this.processorNode = global.createCustomProcessorNode(this.audioContext.context);
+      this.processorNode = new MyProcessorNode(this.audioContext, global.createCustomProcessorNode(this.audioContext.context));
       console.log('Custom processor node created:', this.processorNode);
       if (this.processorNode) {
         console.log('Connecting source node to processor node');

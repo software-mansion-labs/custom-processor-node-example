@@ -5,7 +5,7 @@
 
 namespace audioapi {
     MyProcessorNode::MyProcessorNode(BaseAudioContext *context)
-        : AudioNode(context), gain_(0.5) {
+        : AudioNode(context), gain_(0.1) {
         printf("MyProcessorNode created with gain: %f\n", gain_);
         isInitialized_ = true;
     }
