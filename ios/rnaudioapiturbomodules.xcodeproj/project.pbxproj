@@ -11,9 +11,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		1CEE277D5EC8105B1AC59506 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 41D8150ACCA80CD76C71DBC4 /* PrivacyInfo.xcprivacy */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		904ACFB02E2546690095F7C1 /* MyProcessorNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 904ACFAC2E2546690095F7C1 /* MyProcessorNode.cpp */; };
-		904ACFB12E2546690095F7C1 /* NativeAudioProcessingModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 904ACFAE2E2546690095F7C1 /* NativeAudioProcessingModule.cpp */; };
 		904ACFB42E2546870095F7C1 /* NativeAudioProcessingModuleProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 904ACFB32E2546870095F7C1 /* NativeAudioProcessingModuleProvider.mm */; };
+		904ACFC32E26991F0095F7C1 /* NativeAudioProcessingModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 904ACFC12E26991F0095F7C1 /* NativeAudioProcessingModule.cpp */; };
+		904ACFC42E26991F0095F7C1 /* MyProcessorNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 904ACFBE2E26991F0095F7C1 /* MyProcessorNode.cpp */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 		FD8349B7B88DA4DC3B3ABBAD /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806FEB85BBDDAA1610D81DC /* ExpoModulesProvider.swift */; };
@@ -25,13 +25,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rnaudioapiturbomodules/Info.plist; sourceTree = "<group>"; };
 		270346F69CA474E9470CA620 /* Pods-rnaudioapiturbomodules.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnaudioapiturbomodules.release.xcconfig"; path = "Target Support Files/Pods-rnaudioapiturbomodules/Pods-rnaudioapiturbomodules.release.xcconfig"; sourceTree = "<group>"; };
 		41D8150ACCA80CD76C71DBC4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = rnaudioapiturbomodules/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		904ACFAA2E2546690095F7C1 /* CustomProcessorNodeHostObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomProcessorNodeHostObject.h; sourceTree = "<group>"; };
-		904ACFAB2E2546690095F7C1 /* MyProcessorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProcessorNode.h; sourceTree = "<group>"; };
-		904ACFAC2E2546690095F7C1 /* MyProcessorNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyProcessorNode.cpp; sourceTree = "<group>"; };
-		904ACFAD2E2546690095F7C1 /* NativeAudioProcessingModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAudioProcessingModule.h; sourceTree = "<group>"; };
-		904ACFAE2E2546690095F7C1 /* NativeAudioProcessingModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeAudioProcessingModule.cpp; sourceTree = "<group>"; };
 		904ACFB22E2546870095F7C1 /* NativeAudioProcessingModuleProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAudioProcessingModuleProvider.h; sourceTree = "<group>"; };
 		904ACFB32E2546870095F7C1 /* NativeAudioProcessingModuleProvider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NativeAudioProcessingModuleProvider.mm; sourceTree = "<group>"; };
+		904ACFBD2E26991F0095F7C1 /* MyProcessorNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProcessorNode.h; sourceTree = "<group>"; };
+		904ACFBE2E26991F0095F7C1 /* MyProcessorNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyProcessorNode.cpp; sourceTree = "<group>"; };
+		904ACFBF2E26991F0095F7C1 /* MyProcessorNodeHostObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProcessorNodeHostObject.h; sourceTree = "<group>"; };
+		904ACFC02E26991F0095F7C1 /* NativeAudioProcessingModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAudioProcessingModule.h; sourceTree = "<group>"; };
+		904ACFC12E26991F0095F7C1 /* NativeAudioProcessingModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeAudioProcessingModule.cpp; sourceTree = "<group>"; };
 		90F875C86094B574629AADB1 /* Pods-rnaudioapiturbomodules.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnaudioapiturbomodules.debug.xcconfig"; path = "Target Support Files/Pods-rnaudioapiturbomodules/Pods-rnaudioapiturbomodules.debug.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = rnaudioapiturbomodules/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
@@ -104,9 +104,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				904ACFC22E26991F0095F7C1 /* shared */,
 				904ACFB22E2546870095F7C1 /* NativeAudioProcessingModuleProvider.h */,
 				904ACFB32E2546870095F7C1 /* NativeAudioProcessingModuleProvider.mm */,
-				904ACFAF2E2546690095F7C1 /* shared */,
 				13B07FAE1A68108700A75B9A /* rnaudioapiturbomodules */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -127,14 +127,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		904ACFAF2E2546690095F7C1 /* shared */ = {
+		904ACFC22E26991F0095F7C1 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				904ACFAA2E2546690095F7C1 /* CustomProcessorNodeHostObject.h */,
-				904ACFAB2E2546690095F7C1 /* MyProcessorNode.h */,
-				904ACFAC2E2546690095F7C1 /* MyProcessorNode.cpp */,
-				904ACFAD2E2546690095F7C1 /* NativeAudioProcessingModule.h */,
-				904ACFAE2E2546690095F7C1 /* NativeAudioProcessingModule.cpp */,
+				904ACFBD2E26991F0095F7C1 /* MyProcessorNode.h */,
+				904ACFBE2E26991F0095F7C1 /* MyProcessorNode.cpp */,
+				904ACFBF2E26991F0095F7C1 /* MyProcessorNodeHostObject.h */,
+				904ACFC02E26991F0095F7C1 /* NativeAudioProcessingModule.h */,
+				904ACFC12E26991F0095F7C1 /* NativeAudioProcessingModule.cpp */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -344,11 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904ACFC32E26991F0095F7C1 /* NativeAudioProcessingModule.cpp in Sources */,
+				904ACFC42E26991F0095F7C1 /* MyProcessorNode.cpp in Sources */,
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
 				FD8349B7B88DA4DC3B3ABBAD /* ExpoModulesProvider.swift in Sources */,
-				904ACFB02E2546690095F7C1 /* MyProcessorNode.cpp in Sources */,
 				904ACFB42E2546870095F7C1 /* NativeAudioProcessingModuleProvider.mm in Sources */,
-				904ACFB12E2546690095F7C1 /* NativeAudioProcessingModule.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,15 +47,13 @@ class AudioPlayer {
     this.sourceNode.buffer = this.audioBuffer;
     this.sourceNode.playbackRate.value = this.playbackRate;
     if (withProcessor) {
-      console.log('Creating custom processor node');
-      this.processorNode = new MyProcessorNode(this.audioContext, global.createCustomProcessorNode(this.audioContext.context));
-      console.log('Custom processor node created:', this.processorNode);
+      if (!this.processorNode) {
+        this.processorNode = new MyProcessorNode(this.audioContext, global.createCustomProcessorNode(this.audioContext.context));
+        console.log('Creating custom processor node');
+      }
       if (this.processorNode) {
-        console.log('Connecting source node to processor node');
         this.sourceNode.connect(this.processorNode);
-        console.log('Source node connected to processor node');
         this.processorNode.connect(this.audioContext.destination);
-        console.log('everything connected');
       }
     } else {
       this.sourceNode.connect(this.audioContext.destination);
@@ -99,6 +97,13 @@ class AudioPlayer {
     if (this.isPlaying) {
       this.isPlaying = false;
       // this.play();
+    }
+  };
+
+  modifyGain = (gain: number) => {
+    if (this.processorNode) {
+      this.processorNode.gain = gain;
+      console.log(this.processorNode.gain);
     }
   };
 

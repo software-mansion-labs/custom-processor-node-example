@@ -1,7 +1,7 @@
 #pragma once
 
-#include <audioapi/HostObjects/AudioNodeHostObject.h>
 #include "MyProcessorNode.h"
+#include <audioapi/HostObjects/AudioNodeHostObject.h>
 
 #include <memory>
 #include <vector>
@@ -9,12 +9,13 @@
 namespace audioapi {
 using namespace facebook;
 
-class CustomProcessorNodeHostObject : public AudioNodeHostObject {
- public:
-  explicit CustomProcessorNodeHostObject(const std::shared_ptr<MyProcessorNode> &node)
+class MyProcessorNodeHostObject : public AudioNodeHostObject {
+public:
+  explicit MyProcessorNodeHostObject(
+      const std::shared_ptr<MyProcessorNode> &node)
       : AudioNodeHostObject(node) {
-    addGetters(JSI_EXPORT_PROPERTY_GETTER(CustomProcessorNodeHostObject, gain));
-    addSetters(JSI_EXPORT_PROPERTY_SETTER(CustomProcessorNodeHostObject, gain));
+    addGetters(JSI_EXPORT_PROPERTY_GETTER(MyProcessorNodeHostObject, gain));
+    addSetters(JSI_EXPORT_PROPERTY_SETTER(MyProcessorNodeHostObject, gain));
   }
 
   JSI_PROPERTY_GETTER(gain) {

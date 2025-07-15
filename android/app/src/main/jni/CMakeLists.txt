@@ -1,40 +1,26 @@
 cmake_minimum_required(VERSION 3.13)
 
-# Define the library name here.
 project(appmodules)
 
 set(ROOT ${CMAKE_SOURCE_DIR}/../../../../..)
+set(AUDIO_API_DIR ${ROOT}/node_modules/react-native-audio-api)
 
-# This file includes all the necessary to let you build your React Native application
 include(${REACT_ANDROID_DIR}/cmake-utils/ReactNative-application.cmake)
 
-file(GLOB_RECURSE RNAUDIOAPI_SRC
-  CONFIGURE_DEPENDS
-  "${ROOT}/node_modules/react-native-audio-api/common/cpp/audioapi/*.cpp"
-  "${ROOT}/node_modules/react-native-audio-api/android/src/main/cpp/audioapi/android/core/AudioDecoder.cpp"
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+  ${ROOT}/shared/NativeAudioProcessingModule.cpp
+  ${ROOT}/shared/MyProcessorNode.cpp
+  ${ROOT}/shared/MyProcessorNodeHostObject.cpp
 )
 
-list(REMOVE_ITEM RNAUDIOAPI_SRC "${ROOT}/node_modules/react-native-audio-api/common/cpp/audioapi/core/AudioContext.cpp")
-
-file(GLOB_RECURSE RNAUDIOAPI_LIBS
-  CONFIGURE_DEPENDS
-  "${ROOT}/node_modules/react-native-audio-api/common/cpp/audioapi/libs/*.c"
-  "${ROOT}/node_modules/react-native-audio-api/common/cpp/audioapi/libs/*.h"
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+    ${ROOT}/shared
+    ${AUDIO_API_DIR}/common/cpp
 )
 
-add_library(rnaudioapi_c STATIC ${RNAUDIOAPI_LIBS})
-
-target_include_directories(rnaudioapi_c PUBLIC
-  ${ROOT}/node_modules/react-native-audio-api/common/cpp
+add_library(react-native-audio-api SHARED IMPORTED)
+string(TOLOWER ${CMAKE_BUILD_TYPE} BUILD_TYPE_LOWER)
+set_target_properties(react-native-audio-api PROPERTIES IMPORTED_LOCATION
+        ${AUDIO_API_DIR}/android/build/intermediates/merged_native_libs/${BUILD_TYPE_LOWER}/merge${CMAKE_BUILD_TYPE}NativeLibs/out/lib/${CMAKE_ANDROID_ARCH_ABI}/libreact-native-audio-api.so
 )
-
-# Define where the additional source code lives. We need to crawl back the jni, main, src, app, android folders
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${ROOT}/shared/NativeAudioProcessingModule.cpp
-    ${ROOT}/shared/MyProcessorNode.cpp
-    ${RNAUDIOAPI_SRC})
-
-# Define where CMake can find the additional header files. We need to crawl back the jni, main, src, app, android folders
-target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${ROOT}/shared
-    ${ROOT}/node_modules/react-native-audio-api/common/cpp)
-
-target_link_libraries(${CMAKE_PROJECT_NAME} rnaudioapi_c android log)
+target_link_libraries(${CMAKE_PROJECT_NAME} react-native-audio-api android log)
