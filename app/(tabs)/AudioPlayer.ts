@@ -1,5 +1,4 @@
 import { AudioContext, AudioManager } from 'react-native-audio-api';
-import { IAudioNode } from 'react-native-audio-api/lib/typescript/interfaces';
 import type {
   AudioBufferSourceNode,
   AudioBuffer,
@@ -10,7 +9,7 @@ class AudioPlayer {
   private readonly audioContext: AudioContext;
   private sourceNode: AudioBufferSourceNode | null = null;
   private audioBuffer: AudioBuffer | null = null;
-  private processorNode: IAudioNode | null = null;
+  private processorNode: AudioNode | null = null;
 
   private isPlaying: boolean = false;
 
