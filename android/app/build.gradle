@@ -180,3 +180,10 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+evaluationDependsOn(":react-native-audio-api")
+
+afterEvaluate {
+    tasks.getByName("buildCMakeDebug").dependsOn(findProject(":react-native-audio-api").tasks.getByName("mergeDebugNativeLibs"))
+    tasks.getByName("buildCMakeRelWithDebInfo").dependsOn(findProject(":react-native-audio-api").tasks.getByName("mergeReleaseNativeLibs"))
+}
