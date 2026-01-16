@@ -28,7 +28,7 @@ jsi::Function NativeAudioProcessingModule::createInstaller(jsi::Runtime &runtime
         auto object = args[0].getObject(runtime);
         auto context = object.getHostObject<audioapi::BaseAudioContextHostObject>(runtime);
         if (context != nullptr) {
-          auto node = std::make_shared<audioapi::MyProcessorNode>(context->context_.get());
+          auto node = std::make_shared<audioapi::MyProcessorNode>(context->context_);
           auto nodeHostObject = std::make_shared<audioapi::MyProcessorNodeHostObject>(node);
           return jsi::Object::createFromHostObject(runtime, nodeHostObject);
         }

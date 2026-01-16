@@ -5,7 +5,7 @@
 #include <android/log.h>
 
 namespace audioapi {
-MyProcessorNode::MyProcessorNode(BaseAudioContext *context)
+MyProcessorNode::MyProcessorNode(std::shared_ptr<BaseAudioContext> context)
     : AudioNode(context), gain_(0.1) {
     isInitialized_ = true;
 }
@@ -16,12 +16,13 @@ void MyProcessorNode::setGain(float value) {
     gain_ = value;
 }
 
-void MyProcessorNode::processNode(const std::shared_ptr<AudioBus> &bus,
+std::shared_ptr<AudioBus> MyProcessorNode::processNode(const std::shared_ptr<AudioBus> &bus,
                                   int framesToProcess) {
-    for (int i = 0; i < bus->getNumberOfChannels(); ++i) {
-    auto channel = bus->getChannel(i);
-    dsp::multiplyByScalar(channel->getData(), gain_, channel->getData(),
-                          framesToProcess);
-  }
+   for (int i = 0; i < bus->getNumberOfChannels(); ++i) {
+       auto channel = bus->getChannel(i);
+       dsp::multiplyByScalar(channel->getData(), gain_, channel->getData(),
+                         framesToProcess);
+   }
+    return bus;
 }
 } // namespace audioapi

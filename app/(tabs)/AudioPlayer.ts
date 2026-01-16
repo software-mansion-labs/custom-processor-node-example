@@ -18,7 +18,7 @@ class AudioPlayer {
   private playbackRate: number = 1;
 
   constructor() {
-    this.audioContext = new AudioContext({ initSuspended: true });
+    this.audioContext = new AudioContext();
   }
 
   play = async (withProcessor: boolean) => {
@@ -52,6 +52,7 @@ class AudioPlayer {
         console.log('Creating custom processor node');
       }
       if (this.processorNode) {
+        console.log('Connecting source node to processor node');
         this.sourceNode.connect(this.processorNode);
         this.processorNode.connect(this.audioContext.destination);
       }
@@ -68,9 +69,6 @@ class AudioPlayer {
 
     this.sourceNode.start(this.audioContext.currentTime, this.offset);
 
-    AudioManager.setLockScreenInfo({
-      state: 'state_playing',
-    });
   };
 
   pause = async () => {
@@ -81,9 +79,6 @@ class AudioPlayer {
 
     this.sourceNode?.stop(this.audioContext.currentTime);
 
-    AudioManager.setLockScreenInfo({
-      state: 'state_paused',
-    });
 
     await this.audioContext.suspend();
 

@@ -5486,10 +5486,12 @@ react-is@^19.1.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-19.1.0.tgz"
   integrity sha512-Oe56aUPnkHyyDxxkvqtd7KkdQP5uIUfHxd5XTb3wE9d/kRnZLmKbDB0GWk919tdQ+mxxPtG6EAs6RMT6i1qtHg==
 
-react-native-audio-api@^0.7.0-nightly-cec6d21-20250731:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/react-native-audio-api/-/react-native-audio-api-0.7.1.tgz#1b48dd8ffaaf30abba795d3de960379a04375ca0"
-  integrity sha512-s2uDVnPtARtaNUA7ghLInixJcCLRzfienr4HCN2u8zRdEmIZ9fZBBVVizucQbEU3UlIdYdFy6kbDdBhY7hNSoA==
+react-native-audio-api@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/react-native-audio-api/-/react-native-audio-api-0.11.1.tgz#70fa276840ccbcc277d96de7ad6ea44acd08315d"
+  integrity sha512-Zwfg8ShgQM9ETkTjk9vaqPxOzqX+m+H2BD4nn1bSgwUVp4lfGv2Mli5rsD+eaoWIFyzyDFoHzwt+3pTvbCS/SA==
+  dependencies:
+    semver "^7.7.3"
 
 react-native-edge-to-edge@1.6.0:
   version "1.6.0"
@@ -5858,6 +5860,11 @@ semver@^7.1.3, semver@^7.3.5, semver@^7.5.4, semver@^7.6.0, semver@^7.7.1:
   version "7.7.2"
   resolved "https://registry.npmjs.org/semver/-/semver-7.7.2.tgz"
   integrity sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==
+
+semver@^7.7.3:
+  version "7.7.3"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.3.tgz#4b5f4143d007633a8dc671cd0a6ef9147b8bb946"
+  integrity sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==
 
 semver@~7.6.3:
   version "7.6.3"
